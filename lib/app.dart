@@ -19,12 +19,69 @@ class CupertinoStoreApp extends StatelessWidget {
 class CupertinoStoreHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return CupertinoPageScaffold(
-        navigationBar: CupertinoNavigationBar(
-          middle: Text("Cupertino App"),
+    return CupertinoTabScaffold(
+        tabBar: CupertinoTabBar(
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(CupertinoIcons.home),
+              label: 'Products',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(CupertinoIcons.search),
+              label: 'Search',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(CupertinoIcons.shopping_cart),
+              label: 'Cart',
+            ),
+          ],
         ),
-        child: Center(
-          child: Text("Hello World"),
-        ));
+        tabBuilder: (context, index) {
+          late final CupertinoTabView returnValue;
+          switch (index) {
+            case 0:
+              returnValue = CupertinoTabView(builder: (context) {
+                return CupertinoPageScaffold(child: ProductListTab());
+              });
+              break;
+            case 1:
+              returnValue = CupertinoTabView(builder: (context) {
+                return CupertinoPageScaffold(
+                  child: SearchTab(),
+                );
+              });
+              break;
+            case 2:
+              returnValue = CupertinoTabView(builder: (context) {
+                return CupertinoPageScaffold(
+                  child: ShoppingCartTab(),
+                );
+              });
+              break;
+          }
+
+          return returnValue;
+        });
+  }
+}
+
+class ProductListTab extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
+
+class SearchTab extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
+
+class ShoppingCartTab extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
   }
 }
