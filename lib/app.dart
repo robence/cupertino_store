@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 
+import 'tabs/product_list_tab.dart';
+
 class CupertinoStoreApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -62,13 +64,6 @@ class CupertinoStoreHomePage extends StatelessWidget {
 
           return returnValue;
         });
-  }
-}
-
-class ProductListTab extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
   }
 }
 
