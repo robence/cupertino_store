@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 
-import 'tabs/product_list_tab.dart';
+import 'package:cupertino_store/tabs/product_list_tab.dart';
+import 'package:cupertino_store/tabs/search_tab.dart';
+import 'package:cupertino_store/tabs/shopping_cart.dart';
 
 class CupertinoStoreApp extends StatelessWidget {
   @override
@@ -64,19 +66,5 @@ class CupertinoStoreHomePage extends StatelessWidget {
 
           return returnValue;
         });
-  }
-}
-
-class SearchTab extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
-}
-
-class ShoppingCartTab extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
   }
 }
