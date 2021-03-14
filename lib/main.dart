@@ -7,7 +7,7 @@ import 'app.dart';
 void main() {
   return runApp(
     ChangeNotifierProvider(
-      create: (context) => AppStateModel(),
+      create: (_) => AppStateModel()..loadProducts(),
       child: CupertinoStoreApp(),
     ),
   );
